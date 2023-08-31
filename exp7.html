@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+    <div style="background-color: lightgray; width: 50%; height: 750px; float:left;"> 
+<h1>Number of people opting for different types of houses as per their need.</h1>
+<p>Here is the deatiled analysis of how many people opt for houses.</p>
+
+<div id="piechart"></div>
+
+<script type="text/javascript"
+src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Task', 'Hours per Day'],
+['1BHK', 8],
+['2BHK', 7],
+['3BHK', 4],
+['1RK', 2],
+['Bungalows', 3]
+]);
+var options = {'title':'Houses as per need', 'width':550, 'height':400};
+var chart =
+new google.visualization.PieChart(document.getElementById('piechart'));
+chart.draw(data, options);
+}
+
+
+</script>
+</div>
+<div style="background-color: lightblue; width:50%; height: 750px; float:left">  
+    <h1>Price Distribution of different houses.</h1>
+<p>Here is the deatiled analysis of prices according to respective no. of rooms.</p>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['No.OF Rooms', 'Price(in Lakhs)'],
+          [ '1BHK',      35],
+          [ '2BHK',      50],
+          [ '3BHK',     95],
+          [ '1RK',      20],
+          [ 'Bungalows',      60]
+          
+        ]);
+
+        var options = {'title':'Price distribution', 'width':550, 'height':400};
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+</div>
+
+
+
+
+</body>
+</html>
